@@ -1,0 +1,16 @@
+%h1 Books
+
+%table{class:"table"}
+  %thead
+    %tr
+      %th="Title"
+      %th="Author"
+      %th="Path"
+  %tbody
+    - @books.each do |book|
+      %tr
+        %td=book.title
+        %td=book.author_sort
+        %td
+          %a
+        
