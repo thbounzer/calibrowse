@@ -1,0 +1,7 @@
+production: 
+  environment: production
+staging:
+  environment: staging
+development:
+  environment: development
+  calibre_lib: '/Users/thbounzer/data/Calibre Library/'
