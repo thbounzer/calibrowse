@@ -1,16 +1,36 @@
-%h1 Books
+:javascript
+  $(document).ready( function() {
+    $('#search').click(function() {
+      sendreq();
+    });
+    $('#filter').keypress( function (evt) {
+      if (evt.which == 13) {
+        sendreq();
+      }
+    });
+    var sendreq = function(){
+    var filter = $('#filter').val();
+      $.ajax({
+        dataType : 'html',
+        url: "/books.js?filter="+filter
+      }).done(function(data) {
+          $('#books').html(data);
+        }
+      ).fail(function(jqXHR, textStatus, errorThrown) {
+          console.log("fail: "+errorThrown);
+      });
+      };
+  });
 
-%table{class:"table"}
-  %thead
-    %tr
-      %th="Title"
-      %th="Author"
-      %th="Path"
-  %tbody
-    - @books.each do |book|
-      %tr
-        %td=book.title
-        %td=book.author_sort
-        %td
-          %a
-        
+%div.row
+  %div.col-lg-12
+    %div.input-group
+      %input#filter.form-control{type:"text", placeholder:"Search by fuzzy title, press enter or Go to search"}
+      %span.input-group-btn
+        %button#search.btn.btn-default{type:"button"} Go!
+%div.row
+  %div.col-lg-12
+    %div#books
+      = render 'index'
+
+
