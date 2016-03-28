@@ -2,3 +2,6 @@
 
 # Add new mime types for use in respond_to blocks:
 # Mime::Type.register "text/richtext", :rtf
+Mime::Type.register "application/mobi", :mobi
+Mime::Type.register "application/epub", :epub
+Mime::Type.register "image/jpg", :jpg
