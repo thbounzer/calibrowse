@@ -1,0 +1,24 @@
+%h3=@book.title
+
+%div.row
+  %div.col-lg-6
+    %table{class:"table"}
+      %thead
+        %tr
+          %th="Format"
+      %tbody
+        - @book.book_data.each do |book_datum|
+          %tr
+            %td=link_to book_datum.format,book_path(@book)+"."+book_datum.format.downcase
+  %div.col-lg-6
+    %div{width: '300px', height: '150px'}
+      %div#coverContainer
+        %img#coverImage{src:cover_path(@book)+".jpg"}
+%nav
+  %ul.pager            
+    - if @prev_book != nil
+      %li.previous
+        %a{href: "#{book_path(@prev_book)}"}="Previous"
+    - if @next_book != nil
+      %li.next
+        %a{href: "#{book_path(@next_book)}"}="Next"

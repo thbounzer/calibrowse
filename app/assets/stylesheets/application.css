@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+#coverImage {
+    width: 100%;
+    height: auto;
+}
+
+#coverContainer {
+    width: 50%;
+    margin: 0 auto;
+}
