@@ -9,8 +9,19 @@
 <body>
 
 <div class="container">
-	<%= yield %>	
+<nav class="navbar navbar-default navbar-static-top">
+  <ul class="nav navbar-nav">
+    <li>
+      <a href=<%= books_path %>> Home </a>
+    </li>
+  </ul>
+ </nav>
 </div>
+ <div class="container">
+   <%= yield %>	
+ </div>
+
+
 
 </body>
 </html>
