@@ -17,3 +17,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore yaml data dumps 
+/db/*.yml
+/db/*.yaml
