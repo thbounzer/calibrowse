@@ -1,28 +1,8 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small and dumb library application. Using as a data source the Calibre sqlite3 metadata.db
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* This is experimental, lot of features are missing, possibly broken, and wrongly implemented. You have been warned.
+* Use calibre as a basis, so it implies that you are currently using Calibre to index and archive your ebook library.
+* To test it, just copy your Calibre metadata.db (you should find it inside you calibre library directory), and set it as the development database.
+* bundle install and then bundle exec rails s
